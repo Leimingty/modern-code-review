@@ -21,12 +21,12 @@ int main(){
 	bool turn = false; // false for player 1's turn, true for player 2's turn. Player 1 first.
 	cout << "X = Player 1" << endl << "O = Player 2" << endl;
        	for (int n=0; n<9; n++){
-		turn = !turn;  // use the not-operator to change true to false or false to true.
+		
 		if (turn == false)
 			cout << "Player 1: ";
 		else
 			cout << "Player 2: ";
-		cout << "Which cell to mark? i:[1..3], j:[1..3]: "; 
+		cout << "Which cell to mark? i:[0..2], j:[0..2]: "; 
 		cin >> i >> j;
 		if (turn == false)
 			game[i][j] = 'X';
@@ -36,6 +36,7 @@ int main(){
 			cout << "Win!" << endl;
 			break; // need to terminate the problem
 		}
+		turn = !turn;  // use the not-operator to change true to false or false to true.
 		if (n==9) // all celles with i=0 to 2 have been inputted above but no winner yet
 	   		cout << "Tie!" << endl;
 	}
